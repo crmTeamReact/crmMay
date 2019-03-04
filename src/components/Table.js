@@ -103,14 +103,7 @@ export class Table extends Component {
             }
             </tbody>
         </table>
-        <ul className="dropdown-menu" role="menu">
-          <li><a target="_new" href="https://colorlib.com/wp/templates/">Free Templates <span className="pull-right glyphicon glyphicon-edit"></span></a></li>
-          <li><a target="_new" href="https://demo.virtuemarttemplates.net">VirtueMart <span className="pull-right glyphicon glyphicon-edit"></span></a></li>
-          <li><a target="_new" href="https://demo.energizethemes.com">Joomla <span className="pull-right glyphicon glyphicon-edit"></span></a></li>
-          <li><a target="_new" href="https://www.jotform.com/form-templates/?utm_source=bootsnipp&utm_campaign=bootsnipp" className="" rel="nofollow">Free Form Templates <span className="pull-right glyphicon glyphicon-edit"></span></a></li>
-          <li><a target="_new" href="https://www.jotform.com/pdf-templates/?utm_source=bootsnipp&utm_campaign=bootsnipp" className="" rel="nofollow">Free PDF Templates <span className="pull-right glyphicon glyphicon-edit"></span></a></li>
-
-        </ul>
+        
 
 
 
