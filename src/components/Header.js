@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 export class Header extends Component {
   
@@ -12,7 +13,7 @@ export class Header extends Component {
             <input className="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search" />
             <ul className="navbar-nav px-3">
               <li className="nav-item text-nowrap">
-                <a className="nav-link text-secondary" href="#">Sign out</a>
+                <NavLink className="nav-link text-secondary" to="/login">Sign out</NavLink>
               </li>
             </ul>
           </div>

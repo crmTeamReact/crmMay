@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {BrowserRouter, Route} from 'react-router-dom'
 import './App.css';
 import Header from './components/Header.js';
 import Nav from './components/Nav.js';
 import Table from './components/Table.js';
+import Login from './components/login.js';
 
 class App extends Component {
   render() {
     return (
+      <BrowserRouter>
       <div id="container" className="d-flex flex-column" style={{height: '100vh'}}>
         <div id="header">
           <Header />
@@ -18,12 +20,13 @@ class App extends Component {
               <Nav />
             </div>
             <div className="col-10 bg-light">
-              <Table />
+              <Route exact path='/' component={Table}></Route>
+              <Route path='/login' component={Login}></Route>
             </div>
           </div>
         </div>
       </div>
-      
+      </BrowserRouter>
     );
   }
 }
