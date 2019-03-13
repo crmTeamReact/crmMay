@@ -71,11 +71,11 @@ export class Table extends Component {
                     <th scope="col">name</th>
                     <th scope="col">username</th>
                     <th scope="col">email</th>
-                    <td align="right">
-                      <a className="btn btn-primary text-white">
+                    <th scope="col" align="right">
+                      <a className="btn btn-primary text-white float-right">
                         <i className="fa fa-plus"></i>
                       </a>
-                    </td>
+                    </th>
                 </tr>
             </thead>
             <tbody>
