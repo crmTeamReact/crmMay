@@ -7,11 +7,10 @@ import {loginAction} from '../../actions/login'
 class loginPage extends Component {
 
     submit = data => {
-        this.props.loginAction(data)
-        // this.props.login(data)
-        //   .then(() => {
-        //     this.props.history.push("/")
-        //   })
+      return this.props.loginAction(data)
+          // .then(() => {
+          //   this.props.history.push("/")
+          // })
     }
   
   render() {
@@ -23,16 +22,16 @@ class loginPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  authReducer: state.authReducer.token
-})
+// const mapStateToProps = state => ({
+//   authReducer: state.authReducer.token
+// })
 
 
-// loginPage.PropTypes = {
-//   history: PropTypes.shape({
-//     push: PropTypes.func.isRequired
-//   }).isRequired,
-//   login: PropTypes.func.isRequired
-// }
+loginPage.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired,
+  loginAction: PropTypes.func.isRequired
+}
 
-export default connect(mapStateToProps, {loginAction})(loginPage)
+export default connect(null, {loginAction})(loginPage)

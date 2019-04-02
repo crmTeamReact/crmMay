@@ -22,6 +22,14 @@ class loginForm extends Component {
         this.setState({errors});
         if(Object.keys(errors).length === 0){
             this.props.submit(this.state.data)
+                .then(res => res.json())
+                .then(json => {
+                    if(Object.keys(json).indexOf("message") != -1){
+                        this.setState({errors: {"message": json.message}})
+                    }
+                })
+                    
+                    
         }
     }
 
@@ -43,6 +51,7 @@ class loginForm extends Component {
         <div className="container mt-5" style={{maxWidth: '400px'}}>
         <h1 className="mb-3">Login Form</h1>
         <form method="post" id="form" onSubmit={this.onSubmit}>
+            {errors.message && <InlineError text={errors.message} />}
             <div className="form-group">
                 <label htmlFor="email">Email address</label>
                 <input type="text" name="email" className="form-control" id="email" 
