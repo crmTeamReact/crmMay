@@ -19,7 +19,7 @@ export const loginAction = function(creds){
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         })
-        //.then(res => res.json())
+        // .then(res => res.json())
         
     }
 }

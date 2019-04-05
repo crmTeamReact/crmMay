@@ -8,6 +8,15 @@ class loginPage extends Component {
 
     submit = data => {
       return this.props.loginAction(data)
+          .then(res => {
+            if(!res.ok) throw new Error(res.statusText);
+            return res
+          })
+          .then(() => {
+            this.props.history.push("/home")
+          })
+            
+          
           // .then(() => {
           //   this.props.history.push("/")
           // })

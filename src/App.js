@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom'
 
-
-
 import './App.css';
 import Header from './components/Header.js';
 import Nav from './components/Nav.js';
 import LoginPage from './components/pages/loginPage';
 import Dashboard from './components/pages/dashboard';
+import HomePage from './components/pages/homePage';
 
 
 
@@ -17,6 +16,7 @@ class App extends Component {
       <div>
         <Route exact path='/' component={Dashboard}></Route>
         <Route exact path='/login' component={LoginPage}></Route>
+        <Route exact path='/home' component={HomePage}></Route>
       </div>
       
       // <div id="container" className="d-flex flex-column" style={{height: '100vh'}}>
