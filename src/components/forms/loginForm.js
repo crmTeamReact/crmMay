@@ -22,15 +22,8 @@ class loginForm extends Component {
         this.setState({errors});
         if(Object.keys(errors).length === 0){
             this.props.submit(this.state.data)
-                .catch(err => {
-                    this.setState({errors: err})
-                })
-                // .then(json => {
-                //     console.log("loginform")
-                //     if(Object.keys(json).indexOf("message") != -1){
-                //         this.setState({errors: {"message": json.message}})
-                //     }
-                // })
+                .catch(err => this.setState({errors: err}))
+                
                     
                     
         }

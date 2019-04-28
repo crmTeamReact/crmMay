@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {Route} from 'react-router-dom'
 
 import './App.css';
@@ -7,16 +8,17 @@ import Nav from './components/Nav.js';
 import LoginPage from './components/pages/loginPage';
 import Dashboard from './components/pages/dashboard';
 import HomePage from './components/pages/homePage';
-
-
+import HomeRoute from './components/routes/homeRoute';
+import GuestRoute from './components/routes/guestRoute';
 
 class App extends Component {
   render() {
+    const {location} = this.props;
     return (
       <div>
-        <Route exact path='/' component={Dashboard}></Route>
-        <Route exact path='/login' component={LoginPage}></Route>
-        <Route exact path='/home' component={HomePage}></Route>
+        <Route location={location} exact path='/' component={Dashboard}></Route>
+        <GuestRoute location={location} exact path='/login' component={LoginPage}></GuestRoute>
+        <HomeRoute location={location} exact path='/home' component={HomePage}></HomeRoute>
       </div>
       
       // <div id="container" className="d-flex flex-column" style={{height: '100vh'}}>
@@ -39,5 +41,11 @@ class App extends Component {
     );
   }
 }
+
+// App.PropTypes = {
+//   location: PropTypes.shape({
+//     pathname: PropTypes.string.isRequired
+//   }).isRequired
+// }
 
 export default App;

@@ -2,24 +2,19 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import LoginForm from '../forms/loginForm'
-import {loginAction} from '../../actions/login'
+import {loginAction} from '../../actions/usersActions'
 
 class loginPage extends Component {
 
     submit = data => {
       return this.props.loginAction(data)
-          .then(res => {
-            if(!res.ok) throw new Error(res.statusText);
-            return res
-          })
-          .then(() => {
-            this.props.history.push("/home")
-          })
-            
-          
-          // .then(() => {
-          //   this.props.history.push("/")
-          // })
+        .then(json => {
+          if(json.payload.status !== 200) throw new Error(json.payload.message);
+          return json
+        })
+        .then(() => {
+          this.props.history.push("/home")
+        })
     }
   
   render() {

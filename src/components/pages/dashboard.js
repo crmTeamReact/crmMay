@@ -1,11 +1,11 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import Nav from '../navigation/topNavigation'
 
 const Dashboard = () => {
   return (
     <div>
-      <h3>dashboard</h3>
-      <NavLink to="./login">log in</NavLink>
+      <Nav />
     </div>
   )
 }
